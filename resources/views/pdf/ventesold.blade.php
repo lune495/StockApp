@@ -7,7 +7,8 @@
         <tr>
             <td style="border: none">
                 <p style="font-weight: bold;font-size: 14px">C.I.S SHOWROOM</p>
-                <p style="font-size: 11px">Vente de Materiels de Plomberie et Sanitaire</p>
+                <p style="font-size: 11px">Vente de Materiels de Plomberie Sanitaire</p>
+                <p style="font-size: 11px">Peinture Eléctricite et Carreaux</p>
             </td>
         </tr>
         <tr  style="border: none">
@@ -65,7 +66,7 @@
         </tr>
     </table>
 
-    <h2 style="margin:0">Facture N°  {{$numero ? $numero : "FA01"}}</h2>
+    <h2 style="margin:0">Bon de livraison N°  {{$numero ? $numero : "FA01"}}</h2>
     <br>
     <div class="static">
     <table class="table table-bordered">
@@ -74,7 +75,7 @@
             <th style="border:none"> <p class="badge">DESIGNATION</p> </th>
             <th style="border:none"><p class="badge">QTE</p></th>
             <th style="border:none"><p class="badge">P.U</p></th>
-            <th style="border:none"><p class="badge">REMISE</p></th>
+            {{-- <th style="border:none"><p class="badge">REMISE</p></th> --}}
             <th style="border:none"><p class="badge">MONTANT</p></th>
         </tr>
     <tbody style="border:none">
@@ -86,7 +87,7 @@
                 <td style="font-size:12px;padding: 6px;line-height:15px"><center> {{ \App\Models\Outil::premereLettreMajuscule($vente["produit"]["designation"])}}</center></td>
                 <td style="font-size:12px;padding: 6px"> <center>{{$vente["qte"]}}</center></td>
                 <td style="font-size:12px;padding: 6px"> <center>{{$vente["prix_vente"]}}</center></td>
-                <td style="font-size:12px;padding: 6px"> <center>{{($vente["remise"] ? $vente["remise"] : "-")}}</center></td>
+                {{-- <td style="font-size:12px;padding: 6px"> <center>{{($vente["remise"] ? $vente["remise"] : "-")}}</center></td> --}}
                 <td style="font-size:12px;padding: 6px"><center>{{\App\Models\Outil::formatPrixToMonetaire($vente["montant_net"], false, false)}}</center></td>
             </tr>
         @endforeach
@@ -101,10 +102,18 @@
                     <p style="line-height:5px">{{ \App\Models\Outil::formatPrixToMonetaire($montant_ttc, false, false)}}</p>
                 @endif
             </td> --}}
-            @if ($montant_ttc==0)
+            {{-- @if ($montant_ttc==0)
             <td colspan="1" style="border-left: 2px solid white;border-bottom: 2px solid white"></td>
-            @endif
-            @if ($montant_ttc!=0)
+            @endif --}}
+            <td colspan="1" style="border-left: 2px solid white;border-bottom: 2px solid white"></td>
+            <td colspan="1" style="border-left: 2px solid white;border-bottom: 2px solid white"></td>
+            <td colspan="1" style="border-left: 2px solid white;border-bottom: 2px solid white"></td>
+            <td colspan="2">
+                    <p class="badge" style="font-weight: bold">Net a payer</p>
+                    {{-- <p style="line-height:5px">{{ \App\Models\Outil::formatPrixToMonetaire($montant_ttc !=0 ? $montant_ttc : $montant_avec_remise, false, false)}}</p> --}}
+                    <p style="line-height:5px">{{ \App\Models\Outil::formatPrixToMonetaire($montant_ht, false, true)}}</p>
+            </td>
+            {{-- @if ($montant_ttc!=0)
             <td>
             <div>
             @else
@@ -114,37 +123,29 @@
                 <p class="badge" style="line-height:15px;">Total HT</p>
                 <p style="line-height:5px;text-align:center">{{ \App\Models\Outil::formatPrixToMonetaire($montant_avec_remise, false, false)}}</p>
             </div>
-            </td>
-            <td>
+            </td> --}}
+            {{-- <td>
                 <div>
                     <p class="badge" style="line-height:15px">Tva({{$taxe ? $taxe["value"] : "0"}}%)</p>
                     <p style="line-height:5px">{{$montant_taxe}}</p>
                 </div>
-            </td>
-            @if ($montant_ttc!=0)
+            </td> --}}
+            {{-- @if ($montant_ttc!=0)
             <td>
                 <p class="badge" style="line-height:15px">Total TTC</p>
                 <p style="line-height:5px">{{ \App\Models\Outil::formatPrixToMonetaire($montant_ttc, false, false)}}</p>
             </td>
-            @endif
-             {{-- @if (isset($montant_ttc))
-             <td>
-             @else
-             <td colspan="2">
-             @endif --}}
-             <td colspan="2">
-                    <p class="badge" style="font-weight: bold">Net a payer</p>
-                    <p style="line-height:5px">{{ \App\Models\Outil::formatPrixToMonetaire($montant_ttc !=0 ? $montant_ttc : $montant_avec_remise, false, false)}}</p>
-            </td>
+            @endif --}}
         </tr>
         <tr>
             <td colspan="2"  style="padding-top : 10px;font-size: 11px">
-                <p >Arretée à la somme de :</p>  
-                <p style="font-weight: bold;font-size: 11px">{{\App\Models\Outil::convertNumber($montant_ttc !=0 ? $montant_ttc : $montant_avec_remise)}}</p> 
+                {{-- <p >Arretée à la somme de :</p>   --}}
+                {{-- <p style="font-weight: bold;font-size: 11px">{{\App\Models\Outil::convertNumber($montant_ttc !=0 ? $montant_ttc : $montant_avec_remise)}}</p>  --}}
+                <p style="font-weight: bold;font-size: 11px">{{\App\Models\Outil::convertNumber($montant_ht)}}</p> 
             </td>
             <td style="padding-top : 10px;font-size: 11px" colspan="2"> <p>Conditions Règlement</p> </td>
             <td style="padding-top : 10px;font-size: 11px"> <p>ESPECES</p></td>
-            <td style="padding-top : 10px;font-weight: bold;font-size: 11px" colspan="2"><p> {{\App\Models\Outil::formatPrixToMonetaire($montant_ttc ? $montant_ttc : $montant_avec_remise, false, true)}} </p></td>
+            {{-- <td style="padding-top : 10px;font-weight: bold;font-size: 11px" colspan="2"><p> {{\App\Models\Outil::formatPrixToMonetaire($montant_ttc ? $montant_ttc : $montant_avec_remise, false, true)}} </p></td> --}}
         </tr>
         
     </tbody>

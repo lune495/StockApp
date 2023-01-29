@@ -108,7 +108,7 @@ class VenteController extends Controller
                             }
                             $item->montant = $montant_total_vente;
                             $item->qte = $qte_total_vente;
-                            $item->numero = "FA00{$item->id}";
+                            $item->numero = "00{$item->id}";
                             $item->save();
                             $id = $item->id;
                             DB::commit();
