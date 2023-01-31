@@ -111,6 +111,9 @@
                     bottom: 0px;
                     height: 2.5cm;
                 }
+                .content-block, p {
+                    page-break-inside: avoid;
+                }
                 .badge{
                     padding:.5em 2em !important;
                     color:black;
@@ -137,6 +140,7 @@
             </div>
 
             <!--Footer page-->
+            <div class="content-block">
             <div class="footer">
                  <div style="font-size:15px; border: 1px solid black; padding: 5px "> 
                     <p> 
@@ -150,6 +154,7 @@
                 {{-- <div style="display:inline-flex" style="font-size:10px;">
                     <p class="text-left" style="font-size:10px;"> NINEA: 00455 90 26 - Dakar</p> 
                 </div> --}}
+            </div>
             </div>
         </body>
     </html>
