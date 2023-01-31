@@ -21,6 +21,7 @@ class ProduitFactory extends Factory
             'image'       => $this->faker->name,
             'pa'          => 12000,
             'pv'          => 15000,
+            'qte'         => 10,
             'limite'      => 100,
             'famille_id'  => 1,
             'created_at'  => now(),
