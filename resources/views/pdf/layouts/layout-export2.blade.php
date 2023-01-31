@@ -110,6 +110,7 @@
                     position: fixed;
                     bottom: 0px;
                     height: 2.5cm;
+                    page-break-inside: avoid;
                 }
                 .content-block, p {
                     page-break-inside: avoid;
