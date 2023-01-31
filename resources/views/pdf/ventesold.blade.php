@@ -21,9 +21,9 @@
             </td>
             <td style="border:none;">
                 <div style="border-left: 3px solid black">
-                    <p style="text-align:left ; margin-left:15px;line-height:5px ">www.ccps.sn</p>
-                    <p style="text-align:left ; margin-left:15px;line-height:5px ">Instagram:  @ccps</p>
-                    <p style="text-align:left ; margin-left:15px;line-height:5px ">email:  ccpsvdn@gmail.com</p>
+                    <p style="text-align:left ; margin-left:15px;line-height:5px ">www.cis-immobiliere.sn</p>
+                    <p style="text-align:left ; margin-left:15px;line-height:5px ">Instagram:  @cis</p>
+                    <p style="text-align:left ; margin-left:15px;line-height:5px ">email:  cisvdn@gmail.com</p>
                 </div>
             </td>
             <td style="border:none;"></td>
