@@ -7,8 +7,8 @@
         <tr>
             <td style="border: none">
                 <p style="font-weight: bold;font-size: 14px">C.I.S SHOWROOM</p>
-                <p style="font-size: 11px">Vente de Materiels de Plomberie Sanitaire</p>
-                <p style="font-size: 11px">Peinture Eléctricite et Carreaux</p>
+                <p style="font-size: 11px">Vente de Materiels de Plomberie Sanitaire Tuyauterie</p>
+                <p style="font-size: 11px">Electricité Carreaux Luminaire</p>
             </td>
         </tr>
         <tr  style="border: none">

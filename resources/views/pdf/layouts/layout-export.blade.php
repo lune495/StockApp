@@ -147,9 +147,9 @@
                     </p>
                 </div> --}}
                 {{-- <hr> --}}
-                <div style="display:inline-flex" style="font-size:10px;">
+                {{-- <div style="display:inline-flex" style="font-size:10px;">
                     <p class="text-left" style="font-size:10px;"> NINEA: 00455 90 26 - Dakar</p> 
-                </div>
+                </div> --}}
             </div>
         </body>
     </html>
