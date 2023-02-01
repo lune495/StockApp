@@ -29,6 +29,7 @@ class VentePaginatedQuery extends Query
         [
             'id'                       => ['type' => Type::int()],
             'client_id'                => ['type' => Type::int()],
+            'user_id'                  => ['type' => Type::int()],
             'produit_id'               => ['type' => Type::int()],
             'reference'                => ['type' => Type::string()],
             'created_at_start'         => ['type' => Type::string()],
@@ -53,6 +54,10 @@ class VentePaginatedQuery extends Query
         if (isset($args['client_id']))
         {
             $query->where('client_id', $args['client_id']);
+        }
+         if (isset($args['user_id']))
+        {
+            $query->where('user_id', $args['user_id']);
         }
         if (isset($args['reference']))
         {

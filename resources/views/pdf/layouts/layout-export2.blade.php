@@ -133,7 +133,7 @@
 
             <header class = "mb-4"  style="width:100%;">
                 <div class="header text-center" style="font-size: 300px;font-weight:bold">
-                    <img style="width: 100%" src="https://i.ibb.co/Tg0tJFW/Logo-saloum-digital.jpg" alt="">
+                    <img style="width: 100%" src="{{'app-assets/assets/images/Logo_saloum_digital.jpg'}}" alt="">
                 </div>
             </header>
             <div class="mt-4">
@@ -143,7 +143,7 @@
             <!--Footer page-->
             <div class="content-block">
             <div class="footer">
-                 <div style="font-size:15px; border: 1px solid black; padding: 5px "> 
+                 <div style="font-size:14px; border: 0.1px solid black; padding: 1px "> 
                     <p> 
                         <i>Les marchandises vendues ne seront ni reprises ni échangées Nous vous prions de bien vérifier votre livraison
                         <br>

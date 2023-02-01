@@ -27,7 +27,7 @@ class ApprovisionnementPaginatedQuery extends Query
         [
             'id'                       => ['type' => Type::int()],
             'user_id'                  => ['type' => Type::int()],
-            'fournisseur_id'            => ['type' => Type::int()],
+            'fournisseur_id'           => ['type' => Type::int()],
             'produit_id'               => ['type' => Type::int()],
             'created_at_start'         => ['type' => Type::string()],
             'created_at_end'           => ['type' => Type::string()],
