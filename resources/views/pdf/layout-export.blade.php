@@ -1,9 +1,9 @@
-<html>
-    <head>
-        <title>
-            Produit
-        </title>
-        <style>
+    <html>
+        <head>
+            <title>
+                @yield('title')
+            </title>
+            <style>
                 .text-uppercase
                 {
                     text-transform: uppercase;
@@ -123,45 +123,14 @@
                     margin-bottom: 5em;                }
                 .mt-4{
                     margin-top: 2em;                }
-        </style>
-    </head>
-    <body>
-        <div style="text-align:center;font-size:30px;">Liste des produits</div>
-        <br><br>
-        <div style="text-align:center">Date: {{date('d-m-Y')}}</div>
-        <br><br>
-        <table class="table table-bordered w-100">
-            <tr style="">
-                <th style="text-align:center;font-size:15px;background-color:rgba(79, 214, 140, 0.445)"><strong>Code</strong></th>
-                <th style="text-align:center;font-size:15px;"><strong>Désignation</strong></th>
-                <th style="text-align:center;font-size:15px;"><strong>Stock</strong></th>
-                <th style="text-align:center;font-size:15px;"><strong>Prix Achat</strong></th>
-                <th style="text-align:center;font-size:15px;"><strong>Prix Vente</strong></th>
-                <th style="text-align:center;font-size:15px;"><strong>Category</strong></th>
-            </tr>
-            <tbody>
-                {{-- @foreach($taille as $key =>$item)
-                    <tr align="center">
-                        <td style="">{{$item->nom}}</td>
-                        <td style="">{{$item->famille_produit["designation"]}}</td>
-                        <td style="">{{$item->description}}</td>
-                    </tr>
-                @endforeach --}}
-                @for ($i = 0; $i < count($data); $i++)
-                <tr>
-                        <td style="width:100px;text-align:center">{{$data[$i]["code"] }}</td>
-                        <td style="width:400px;text-align:center">{{$data[$i]["designation"] }}</td>
-                        <td style="width:100px;text-align:center">{{$data[$i]["qte"] }}</td>
-                        <td style="width:100px;text-align:center">{{$data[$i]["pa"] }}</td>
-                        <td style="width:100px;text-align:center">{{$data[$i]["pv"] }}</td>
-                        <td style="width:200px;text-align:center">
-                            @if(isset($data[$i]["famille"]))
-                                {{ $data[$i]["famille"]["nom"] }}
-                            @endif
-                        </td>
-                    </tr>
-                @endfor
-            </tbody>
-        </table>
-    </body>
-</html>
+            </style>
+        </head>
+        <body>
+
+            <header class = "mb-4"  style="width:100%;">
+            </header>
+            <div class="mt-4">
+                @yield('content')
+            </div>
+        </body>
+    </html>
