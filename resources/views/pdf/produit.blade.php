@@ -152,8 +152,8 @@
                         <td style="width:100px;text-align:center">{{$data[$i]["code"] }}</td>
                         <td style="width:400px;text-align:center">{{$data[$i]["designation"] }}</td>
                         <td style="width:100px;text-align:center">{{$data[$i]["qte"] ? $data[$i]["qte"] : 0 }}</td>
-                        <td style="width:100px;text-align:center">{{$data[$i]["pa"] }}</td>
-                        <td style="width:100px;text-align:center">{{$data[$i]["pv"] }}</td>
+                        <td style="width:100px;text-align:center">{{$data[$i]["pa"] ? $data[$i]["pa"] : 0 }}</td>
+                        <td style="width:100px;text-align:center">{{$data[$i]["pv"] ? $data[$i]["pv"] : 0 }}</td>
                         <td style="width:200px;text-align:center">
                             @if(isset($data[$i]["famille"]))
                                 {{ $data[$i]["famille"]["nom"] }}
