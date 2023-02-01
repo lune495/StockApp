@@ -44,9 +44,9 @@ class ProduitType extends GraphQLType
     {
         $produits = Produit::all();
         $capital = 0;
-        $pa = $produit->pa ? $produit->pa : 0;
         foreach ($produits as $produit)
         {
+            $pa = $produit->pa ? $produit->pa : 0;
             $capital = $capital + ($pa * $produit->qte);
         }
         $capital = Outil::formatPrixToMonetaire($capital, false, true);
