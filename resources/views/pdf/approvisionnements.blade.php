@@ -77,28 +77,28 @@
         <!--total-->
         <tr>
             <td colspan="1" style="border-left: 2px solid white;border-bottom: 2px solid white"></td>
-            <td>
+            <td colspan="2">
                 <div>
                     <p class="badge" style="line-height:15px;font-size:9px!important">Total HT</p>
-                    <p style="line-height:5px">{{ \App\Models\Outil::formatPrixToMonetaire($montant, false, true)}}</p>
+                    <p style="line-height:5px">{{ $montant}}</p>
                 </div>
             </td>
-            <td>
+            {{-- <td>
                 <div>
                     <p class="badge" style="line-height:15px"> Remise</p>
                     <p style="line-height:5px">0</p>
                 </div>
-            </td>
-            <td>
+            </td> --}}
+            {{-- <td>
                 <div>
                     <p class="badge" style="line-height:15px">tva</p>
                     <p style="line-height:5px">0</p>
                 </div>
-            </td>
-            <td style="font-weight: bold;font-size: 14px"> 
+            </td> --}}
+            <td colspan="2" style="font-weight: bold;font-size: 14px"> 
                 <div>
                     <p class="badge">Net a payer</p>
-                    <p style="line-height:5px">{{ $montant}}</p>
+                    <p style="line-height:5px">{{ \App\Models\Outil::formatPrixToMonetaire($montant, false, true)}}</p>
                 </div> 
             </td>
             <td style="font-weight: bold;font-size: 14px">  </td>
