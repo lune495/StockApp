@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>
-            Produit
+            Produit CIS
         </title>
         <style>
                 .text-uppercase
@@ -126,12 +126,11 @@
         </style>
     </head>
     <body>
-        <div style="text-align:center;font-size:30px;">Liste des produits</div>
-        <br><br>
-        <div style="text-align:center">Date: {{date('d-m-Y')}}</div>
-        <br><br>
         <table class="table table-bordered w-100">
-            <tr style="">
+            <tr>
+                <th colspan="6" style="text-align:center;font-size:25px;"><strong>Liste des Produits du {{date('d-m-Y')}}</strong></th>
+            </tr>
+            <tr>
                 <th style="text-align:center;font-size:15px;background-color:rgba(79, 214, 140, 0.445)"><strong>Code</strong></th>
                 <th style="text-align:center;font-size:15px;"><strong>Désignation</strong></th>
                 <th style="text-align:center;font-size:15px;"><strong>Stock</strong></th>
