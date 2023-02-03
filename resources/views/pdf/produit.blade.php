@@ -149,7 +149,7 @@
                 @endforeach --}}
                 @for ($i = 0; $i < count($data); $i++)
                 <tr>
-                        <td style="width:100px;text-align:center">{{$data[$i]["code"] }}</td>
+                        <td style="width:160px;text-align:center">{{$data[$i]["code"] }}</td>
                         <td style="width:400px;text-align:center">{{$data[$i]["designation"] }}</td>
                         <td style="width:100px;text-align:center">{{$data[$i]["qte"] ? $data[$i]["qte"] : 0 }}</td>
                         <td style="width:100px;text-align:center">{{$data[$i]["pa"] ? $data[$i]["pa"] : 0 }}</td>
