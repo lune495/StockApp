@@ -43,8 +43,6 @@
             <td style="border: none;"></td>
             <td style="border: none;"></td>
             <td style="border: none;"></td>
-            <td style="border: none;"></td>
-            <td style="border: none;"></td>
             <td style="border: none">
                  <div>
                     <p class="badge" style="text-align:left;line-height:15px">Fournisseur</p>
@@ -84,13 +82,15 @@
             <th colspan="2" style="border:none"><p class="badge">Montant HT</p></th>
         </tr>
     <tbody style="border:none">
+        {{$i = 0}}
         @foreach($ligne_approvisionnements as $ligne_approvisionnement)
-            <tr style="padding:0px;">
-                <td style="font-size:11px;padding: 2px"> {{$ligne_approvisionnement["produit"]["designation"]}}</td>
-                <td style="font-size:11px;padding: 2px"> {{$ligne_approvisionnement["quantity_received"]}}</td>
-                <td style="font-size:11px;padding: 2px"> {{$ligne_approvisionnement["produit"]["pa"]}}</td>
+            {{$i++}}
+            <tr {{ $i%2 == 1 ? "style=background-color:rgba(255,249,249,0.877);line-height:9px": "style=background-color:rgba(21,150,189,0.281);line-height:9px" }}>
+                <td style="font-size:12px;padding: 6px;line-height:15px"> {{$ligne_approvisionnement["produit"]["designation"]}}</td>
+                <td style="font-size:12px;padding: 6px;line-height:15px"> {{$ligne_approvisionnement["quantity_received"]}}</td>
+                <td style="font-size:12px;padding: 6px;line-height:15px"> {{$ligne_approvisionnement["produit"]["pa"]}}</td>
                 {{-- <td style="font-size:11px;padding: 2px"> {{0}}</td> --}}
-                <td colspan="2" style="font-size:11px;padding: 2px;text-align:center">{{\App\Models\Outil::formatPrixToMonetaire($ligne_approvisionnement["quantity_received"]*$ligne_approvisionnement["produit"]["pa"], false, false)}}</td>
+                <td colspan="2" style="font-size:12px;padding: 6px;text-align:center">{{\App\Models\Outil::formatPrixToMonetaire($ligne_approvisionnement["quantity_received"]*$ligne_approvisionnement["produit"]["pa"], false, false)}}</td>
             </tr>
         @endforeach
 
