@@ -45,13 +45,6 @@
             <td style="border: none;"></td>
             <td style="border: none;"></td>
             <td style="border: none;"></td>
-            <td style="border: none;"></td>
-            <td style="border: none;"></td>
-            <td style="border: none;"></td>
-            <td style="border: none;"></td>
-            <td style="border: none;"></td>
-            <td style="border: none;"></td>
-            <td style="border: none;"></td>
             <td style="border: none">
                  <div>
                     <p class="badge" style="text-align:left;line-height:15px">Fournisseur</p>
@@ -75,12 +68,6 @@
                 </div>
             </td>
             <td style="border:none;"></td>
-            <td style="border: none; margin-left: 15px">
-                <div>
-                    <p class="badge" style="text-align:left;line-height:15px">Date</p>
-                    <p style="text-align:left;line-height:5px">{{ $created_at_fr}}</p>
-                </div>
-            </td>
             <td style="border:none;"></td>
         </tr>
     </table>
