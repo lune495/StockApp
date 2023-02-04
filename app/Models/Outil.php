@@ -90,6 +90,12 @@ class Outil extends Model
     {
         return ucfirst($val);
     }
+    //Remplace les espaces par vide
+    public static function enleveEspaces($val) {
+        $retour = str_replace(" ", "", $val); //Espace normal
+        $retour = str_replace(' ','',$retour); //Espace bizarre sur le fichier Excel d'import fourni par METALCO (les 2 espaces ne sont pas pareils)
+        return $retour;
+    }
     //Formater le prix
     public static function formatPrixToMonetaire($nbre, $arrondir = false, $avecDevise = false)
     {

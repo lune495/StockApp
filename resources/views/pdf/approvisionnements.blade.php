@@ -77,11 +77,11 @@
     <br>
     <table class="table table-bordered w-100">
         <tr style="font-size: 1.2em;">
-            <th style="border:none"> <p class="badge">Produit</p> </th>
+            <th style="border:none"> <p class="badge">Désignation</p> </th>
             <th style="border:none"><p class="badge">Qté</p></th>
             <th style="border:none"><p class="badge">P U</p></th>
-            <th style="border:none"><p class="badge">Remise</p></th>
-            <th style="border:none"><p class="badge">Montant HT</p></th>
+            {{-- <th style="border:none"><p class="badge">Remise</p></th> --}}
+            <th colspan="2" style="border:none"><p class="badge">Montant HT</p></th>
         </tr>
     <tbody style="border:none">
         @foreach($ligne_approvisionnements as $ligne_approvisionnement)
@@ -89,8 +89,8 @@
                 <td style="font-size:11px;padding: 2px"> {{$ligne_approvisionnement["produit"]["designation"]}}</td>
                 <td style="font-size:11px;padding: 2px"> {{$ligne_approvisionnement["quantity_received"]}}</td>
                 <td style="font-size:11px;padding: 2px"> {{$ligne_approvisionnement["produit"]["pa"]}}</td>
-                <td style="font-size:11px;padding: 2px"> {{0}}</td>
-                <td style="font-size:11px;padding: 2px">{{\App\Models\Outil::formatPrixToMonetaire($ligne_approvisionnement["quantity_received"]*$ligne_approvisionnement["produit"]["pa"], false, false)}}</td>
+                {{-- <td style="font-size:11px;padding: 2px"> {{0}}</td> --}}
+                <td colspan="2" style="font-size:11px;padding: 2px;text-align:center">{{\App\Models\Outil::formatPrixToMonetaire($ligne_approvisionnement["quantity_received"]*$ligne_approvisionnement["produit"]["pa"], false, false)}}</td>
             </tr>
         @endforeach
 
