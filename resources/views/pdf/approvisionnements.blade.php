@@ -1,34 +1,67 @@
 @extends('pdf.layouts.layout-export2')
 @section('title', "PDF Facture commande")
 @section('content')
-    <table style="border: none; margin-top:50px;font-size: 11px">
+    <table style="border: none; border: none;margin-top:2px;font-size: 11px">
+        <tr>
+            <td style="border: none">
+                <p style="font-weight: bold;font-size: 14px">C.I.S SHOWROOM</p>
+                <p style="font-size: 11px">Vente de Materiels de Plomberie Sanitaire Tuyauterie</p>
+                <p style="font-size: 11px">Electricité Carreaux Luminaire</p>
+            </td>
+        </tr>
         <tr  style="border: none">
             <td  style="border: none">
                 <div style="" >
-                    <p  style="text-align:left;line-height:5px"> OUEST FOIRE, TALLY WALLY N°21 </p>
+                    <p  style="text-align:left;line-height:5px"> OUEST FOIRE, TALLY WALLY N°21  </p>
                     <p style="text-align:left;line-height:5px"> +221 77 348 15 82</p>
                     <p style="text-align:left;line-height:5px"> +221 77 597 55 21</p>
                 </div>
             </td>
-
             <td style="border:none;">
                 <div style="border-left: 3px solid black">
-                    <p style="text-align:left ; margin-left:15px;line-height:5px ">www.ccps.sn</p>
-                    <p style="text-align:left ; margin-left:15px;line-height:5px ">Instagram:  @ccps</p>
-                    <p style="text-align:left ; margin-left:15px;line-height:5px ">email:  ccpsvdn@gmail.com</p>
+                    <p style="text-align:left ; margin-left:15px;line-height:5px ">www.cis-immobiliere.sn</p>
+                    <p style="text-align:left ; margin-left:15px;line-height:5px ">Instagram:  @cis</p>
+                    <p style="text-align:left ; margin-left:15px;line-height:5px ">email:  cisvdn@gmail.com</p>
                 </div>
             </td>
             <td style="border:none;"></td>
             <td style="border:none;"></td>
-            <td style="border: none; margin-left: 15px">
+        </tr>
+    </table>
+
+    <table style="border: none;font-size: 11px; margin-top:0px">
+        <tr  style="border: none">
+            <td style="border: none;">
                 <div>
+                    <p class="badge" style="text-align:left;line-height:15px">Date</p>
+                    <p style="text-align:left;line-height:5px">{{ $created_at_fr}}</p>
+                    <p style="style=border-left: 2px solid white;border-bottom: 2px solid white"></p>
+                    <p style="style=border-left: 2px solid white;border-bottom: 2px solid white"></p>
+                </div>
+            </td>
+            <td style="border: none;"></td><td style="border: none;"></td><td style="border: none;"></td><td style="border: none;"></td><td style="border: none;"></td>
+            <td style="border: none;"></td>
+            <td style="border: none;"></td>
+            <td style="border: none;"></td>
+            <td style="border: none;"></td>
+            <td style="border: none;"></td>
+            <td style="border: none;"></td>
+            <td style="border: none;"></td>
+            <td style="border: none;"></td>
+            <td style="border: none;"></td>
+            <td style="border: none;"></td>
+            <td style="border: none;"></td>
+            <td style="border: none;"></td>
+            <td style="border: none">
+                 <div>
                     <p class="badge" style="text-align:left;line-height:15px">Fournisseur</p>
-                    <p style="text-align:left;line-height:5px">{{ $fournisseur ? $fournisseur["nom_complet"] : "FOURNISSEUR DE PASSAGE"}}</p>
-                    <p style="text-align:left ; margin-left:15px;line-height:5px ">{{ $fournisseur ? "Téléphone: " . $fournisseur["telephone"] : " "}}</p>
-                    <p style="text-align:left; margin-left:15px;line-height:5px;text-transform: capitalize "> {{ $fournisseur ? "Adresse:" . $fournisseur["adresse"] : ""}}</p>
+                    <p style="text-align:left;line-height:5px">{{ $fournisseur ? "Nom: " . $fournisseur["nom_complet"] : "FOURNISSEUR DE PASSAGE"}}</p>
+                    <p style="text-align:left ;line-height:5px ">{{ $fournisseur ? "Téléphone: " . $fournisseur["telephone"] : " "}}</p>
+                    <p style="text-align:left;line-height:5px;text-transform: capitalize "> {{ $fournisseur ? "Adresse: " . $fournisseur["adresse"] : ""}}</p>
 
                 </div>
             </td>
+            <td style="border:none;"></td>
         </tr>
     </table>
 
