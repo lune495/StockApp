@@ -118,7 +118,7 @@
             <td colspan="2" style="font-weight: bold;font-size: 14px"> 
                 <div>
                     <p class="badge">Net a payer</p>
-                    <p style="line-height:5px">{{ \App\Models\Outil::formatPrixToMonetaire($montant, false, true)}}</p>
+                    <p style="line-height:5px">{{ \App\Models\Outil::formatPrixToMonetaire($montant, true, true)}}</p>
                 </div> 
             </td>
             <td style="font-weight: bold;font-size: 14px">  </td>
@@ -127,7 +127,7 @@
             <td colspan="2"  style="padding-top : 10px;font-weight: bold;font-size: 11px">Conditions Reglement</td>
             <td style="padding-top : 10px;font-weight: bold;font-size: 11px"> {{$created_at_fr}} </td>
             <td style="padding-top : 10px;font-weight: bold;font-size: 11px"> ESP</td>
-            <td style="padding-top : 10px;font-weight: bold;font-size: 11px"> {{\App\Models\Outil::formatPrixToMonetaire($montant, false, true)}} </td>
+            <td style="padding-top : 10px;font-weight: bold;font-size: 11px"> {{\App\Models\Outil::formatPrixToMonetaire($montant, true, true)}} </td>
         </tr>
         
     </tbody>
