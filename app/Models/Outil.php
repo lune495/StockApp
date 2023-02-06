@@ -80,7 +80,7 @@ class Outil extends Model
     }
     public static function getCaProduit($id,$from,$to)
     {
-          $ca = DB::select(DB::raw("select (select coalesce(sum(vp.prix_vente*vp.qte),0) from vente_produits as vp,produits as p,ventes as v where vp.produit_id = ? and vp.vente_id = v.id and vp.produit_id=p.id and vp.created_at >= ? and vp.created_at <= ?  )
+        $ca = DB::select(DB::raw("select (select coalesce(sum(vp.prix_vente*vp.qte),0) from vente_produits as vp,produits as p,ventes as v where vp.produit_id = ? and vp.vente_id = v.id and vp.produit_id=p.id and vp.created_at >= ? and vp.created_at <= ?  )
         as ca "),[$id,$from,$to])[0]->ca;
         $pa = DB::select(DB::raw("select (SELECT COALESCE(SUM(p.pa),0) FROM vente_produits as vp,produits as p,ventes as v WHERE vp.produit_id = ? and vp.vente_id = v.id and vp.produit_id=p.id and vp.created_at >= ? and vp.created_at <= ?) 
         as pa"),[$id,$from,$to])[0]->pa;

@@ -148,14 +148,14 @@ class ProduitController extends Controller
     public function list_top_produit()
     {
         //
-        $top_produit =  DB::select(DB::raw("select produits.designation, sum(vente_produits.qte * vente_produits.prix_vente) as Montant from vente_produits inner join produits on vente_produits.produit_id = produits.id group by produits.designation Order by sum(vente_produits.qte * vente_produits.prix_vente) desc limit 5"));
+        $top_produit =  DB::select(DB::raw("select produits.designation, sum(vente_produits.qte * vente_produits.prix_vente) as montant from vente_produits inner join produits on vente_produits.produit_id = produits.id group by produits.designation Order by sum(vente_produits.qte * vente_produits.prix_vente) desc limit 5"));
         if(isset($top_produit))
         {
-            // return $data = [
-            //         'designation' => $top_produit[0]->designation,
-            //         'montant' => $top_produit[0]->Montant,
-            //         ];
-
+            return $data = [
+                    'designation' => $top_produit[0]->designation,
+                    'montant' => $top_produit[0]->montant,
+                    ];
+ 
             return $top_produit;
 
         }
