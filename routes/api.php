@@ -44,6 +44,7 @@ Route::get('/produits/search/{name}',[ProduitController::class, 'search']);
     Route::post('/depots',[DepotController::class,'save']);
     Route::post('/approsdepot',[MouvementController::class,'approdepot']);
     Route::delete('/ventes/{id}',[VenteController::class,'delete']);
+    // Route::put('/proformas/{id}',[ProformaController::class,'update']);
     Route::post('/venteannulee/{id}',[VenteController::class,'abortsale']);
     Route::post('/approannulee/{id}',[ApprovisionnementController::class,'abortappro']);
     Route::delete('/clients/{id}',[ClientController::class,'delete']);

@@ -90,6 +90,40 @@ class Outil extends Model
     {
         return ucfirst($val);
     }
+    public static function Checkdetail($olddata, array $newdata, $model, $columns)
+    {
+        if (!is_array($columns))
+        {
+            $columns = array($columns);
+        }
+        foreach ($olddata as $onedetail)
+        {
+            $retour = false;
+            foreach ($newdata as $value)
+            {
+                $retour = true;
+                foreach ($columns as $keyColumn => $onecolumn)
+                {
+                    if ($onedetail->$onecolumn != $value[$onecolumn])
+                    {
+                        $retour = false;
+                        break;
+                    }
+                }
+                if ($retour)
+                    break;
+            }
+            if ($retour==false)
+            {
+                $iem=app($model)::find($onedetail->id);
+                if ($iem)
+                {
+                    $iem->delete();
+                    $iem->forceDelete();
+                }
+            }
+        }
+    }
     //Remplace les espaces par vide
     public static function enleveEspaces($val) {
         $retour = str_replace(" ", "", $val); //Espace normal

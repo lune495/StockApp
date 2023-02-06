@@ -65,6 +65,8 @@ class ProformaController extends Controller
                                             $montant_total_proforma = $montant_total_proforma  + ($detail['prix_vente'] * $proformaprdt->qte);
                                             $produit->save();
                                         }
+                                    $oldDetails = ProformaProduit::where('proforma_id',$item->id)->get();
+                                    Outil::Checkdetail($oldDetails, $details, ProformaProduit::class, ['produit_id']) ;
                             }
                         }
                         if (!isset($errors)) 
