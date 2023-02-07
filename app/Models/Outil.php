@@ -104,7 +104,7 @@ class Outil extends Model
                 $retour = true;
                 foreach ($columns as $keyColumn => $onecolumn)
                 {
-                    if ($onedetail->$onecolumn != $value[$onecolumn])
+                    if ($onedetail->$onecolumn != $value[$onecolumn] || $onedetail->$onecolumn == $value[$onecolumn] )
                     {
                         $retour = false;
                         break;

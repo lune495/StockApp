@@ -43,6 +43,10 @@ class ProformaController extends Controller
                         if (!isset($errors)) 
                         {
                             $item->save();
+                             $oldDetails = ProformaProduit::where('proforma_id',$item->id)->get();
+                            if($oldDetails){
+                            Outil::Checkdetail($oldDetails, $details, ProformaProduit::class, ['produit_id']);
+                            }
                             foreach ($details as $detail) 
                             {
                                 $produit = Produit::find($detail['produit_id']);
@@ -53,19 +57,16 @@ class ProformaController extends Controller
                                 {
                                     $errors = "Renseignez le prix unitaire du produit : {$produit->designation}";
                                 }
-                                        // $oldDetails = ProformaProduit::where('proforma_id',$item->id)->get();
-                                        // Outil::Checkdetail($oldDetails, $details, ProformaProduit::class, ['produit_id']);
                                         $proformaprdt = new ProformaProduit(); 
                                         $proformaprdt->produit_id = $detail['produit_id'];
                                         $proformaprdt->proforma_id  = $item->id;
-                                        $proformaprdt->qte = $detail['quantite'];
+                                        $proformaprdt->qte = $detail['qte'];
                                         $proformaprdt->prix_vente = $detail['prix_vente'];
                                         $saved = $proformaprdt->save();
                                         if($saved)
                                         {
                                             $qte_total_proforma = $qte_total_proforma + $proformaprdt->qte;
                                             $montant_total_proforma = $montant_total_proforma  + ($detail['prix_vente'] * $proformaprdt->qte);
-                                            // $produit->save();
                                         }
                             }
                         }
