@@ -48,8 +48,6 @@
             <td style="border: none;"></td>
             <td style="border: none;"></td>
             <td style="border: none;"></td>
-            <td style="border: none;"></td>
-            <td style="border: none;"></td>
             <td style="border: none">
                 <div>
                     <p class="badge" style="text-align:left;line-height:15px">Client</p>
