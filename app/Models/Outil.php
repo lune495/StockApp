@@ -115,12 +115,13 @@ class Outil extends Model
             }
             if ($retour==false)
             {
-                $iem=app($model)::find($onedetail->id);
-                if ($iem)
-                {
-                    $iem->delete();
-                    $iem->forceDelete();
-                }
+                app($model)::find($onedetail->id)->delete();
+                // if ($iem)
+                // {
+                //     $iem->delete();
+                //     $iem->forceDelete();
+                //     dd($iem);
+                // }
             }
         }
     }

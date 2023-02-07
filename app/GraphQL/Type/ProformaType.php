@@ -85,14 +85,15 @@ class ProformaType extends GraphQLType
     }
     protected function resolveRemiseTotalField($root, $args)
     {
-         $proformaprdts = ProformaProduit::where('proforma_id',$root['id'])->get();
-         $remise_total = 0;
-         $cpt = 0;
-         foreach($proformaprdts as $proformaprdt){
-            $cpt++;
-            $remise_total = $remise_total + $proformaprdt->remise;
-        }
-        return  round($remise_total/$cpt);
+        //  $proformaprdts = ProformaProduit::where('proforma_id',$root['id'])->get();
+        //  $remise_total = 0;
+        //  $cpt = 0;
+        //  foreach($proformaprdts as $proformaprdt){
+        //     $cpt++;
+        //     $remise_total = $remise_total + $proformaprdt->remise;
+        // }
+        // return  round($remise_total/$cpt);
+        return 0;
     }
     protected function resolveMontantTtcField($root, $args)
     {

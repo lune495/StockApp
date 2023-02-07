@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ProformaProduit extends Model
 {
+    protected $table = 'proforma_produits';
     use HasFactory;
     public  function proforma()
     {
