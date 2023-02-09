@@ -28,6 +28,7 @@ class ProduitType extends GraphQLType
                 'limite'                    => ['type' => Type::int()],
 
                 'famille_id'                => ['type' => Type::int()],
+                'nbr_produit'               => ['type' => Type::int()],
                 'famille'                   => ['type' => GraphQL::type('Famille')],
                 'depots'                    => ['type' => Type::listOf(GraphQL::type('Depot')), 'description' => ''],
                 'capital'                   => ['type' => Type::string()],
@@ -70,5 +71,15 @@ class ProduitType extends GraphQLType
     protected function resolveImageField($root, array $args)
     {
         return $root['image'] ? $root['image'] : null;
+    }
+     protected function resolveNbrProduitField($root, array $args)
+    {
+        $produits = Produit::all();
+        $nbr = 0;
+        foreach ($produits as $produit)
+        {
+            $nbr ++;
+        }
+        return $nbr;
     }
 }
