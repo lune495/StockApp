@@ -169,7 +169,7 @@ class ProduitController extends Controller
     public function list_meilleur_client()
     {
         //
-        $top_client =  DB::select(DB::raw("select clients.nom_complet, sum(ventes.montant) as montant from ventes inner join clients on ventes.client_id = clients.id where ventes.client_id is not null group by clients.nom_complet Order by sum(ventes.montant) desc limit 5"));
+        $top_client =  DB::select(DB::raw("select clients.nom_complet, sum(ventes.montant) as montant from ventes inner join clients on ventes.client_id = clients.id where ventes.client_id is not null and ventes.statut = false group by clients.nom_complet Order by sum(ventes.montant) desc limit 5"));
         if(isset($top_client))
         {
             return $top_client;
