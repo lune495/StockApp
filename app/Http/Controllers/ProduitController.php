@@ -93,6 +93,7 @@ class ProduitController extends Controller
                 $item->pa = $request->pa;
                 $item->pv = $request->pv;
                 $item->limite = $request->limite;
+                // dd($item);
                 if(!empty($request->id))
                 {
                     $itemDetailVente = VenteProduit::where('produit_id',$request->id)->first();

@@ -114,10 +114,11 @@ class ApprovisionnementController extends Controller
                     if($request->type_appro == 'DEPOT')
                     {
                         $item->type_appro = "DEPOT";
-                    }
-                    if($request->type_appro == 'BOUTIQUE')
+                    }elseif($request->type_appro == 'BOUTIQUE')
                     {
                         $item->type_appro = "BOUTIQUE";
+                    }else{
+                         $errors = "Veuillez definir le type d'approvisionnement";
                     }
                     $item->numero = "SN0002022FA0{$item->id}";
                     $item->montant = $montant_total_appro;
