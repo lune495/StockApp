@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\User;
+use App\Models\{User,Approvisionnement,Produit,LigneApprovisionnement};
 use Illuminate\Support\Facades\Hash;
 
 
@@ -20,7 +20,7 @@ class UsersTableSeeder extends Seeder
         $users = array();
         // array_push($users,array("name" => "Admin" , "email" => "Admin" ,"password" => "cis2023","role_id" => "1"));
         // array_push($users,array("name" => "Alioune" , "email" => "cis.showroom@gmail.com" ,"password" => "aliounecis2023","role_id" => "1"));
-        array_push($users,array("name" => "Moussa" , "email" => "moussa@gmail.com" ,"password" => "moussacis2023","role_id" => "1"));
+        // array_push($users,array("name" => "Moussa" , "email" => "moussa@gmail.com" ,"password" => "moussacis2023","role_id" => "1"));
         // array_push($users,array("name" => "Moussa" , "email" => "cis.showroom@gmail.com" ,"password" => "moussacis2023","role_id" => "1"));
         // foreach ($users as $user) {
         //     $alluser = User::all();
@@ -46,5 +46,17 @@ class UsersTableSeeder extends Seeder
         //         $newuser->save();
         //       }
         // }
+
+        $appros = Approvisionnement::whereNull('type_appro')->get();
+        foreach ($appros as $appro) {
+
+            $ligne_appros = LigneApprovisionnement::where("approvisionnement_id",$appro->id)->get();
+            foreach ($ligne_appros as $ligne_appro) {
+                $produit = Produit::find($ligne_appro->produit_id);
+                $produit->qte = $produit->qte + $ligne_appro->quantity_received;
+                $produit->save();
+            }
+        }
+
     }
 }
