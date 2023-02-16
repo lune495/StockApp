@@ -31,6 +31,10 @@ class ApprovisionnementController extends Controller
                 // {
                 //     $errors = "Ce fournisseur n'existe pas";
                 // }
+                
+                if(!(array_key_exists('user_id', $request->all()))){
+                    $errors = "Déconnectez-vous et connectez vous à nouveau";
+                }
                 DB::beginTransaction();
                 $item->fournisseur_id = $request->fournisseur_id;
                 $item->user_id = $request->user_id; 

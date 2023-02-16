@@ -47,16 +47,16 @@ class UsersTableSeeder extends Seeder
         //       }
         // }
 
-        $appros = Approvisionnement::whereNull('type_appro')->get();
-        foreach ($appros as $appro) {
+        // $appros = Approvisionnement::whereNull('type_appro')->get();
+        // foreach ($appros as $appro) {
 
-            $ligne_appros = LigneApprovisionnement::where("approvisionnement_id",$appro->id)->get();
-            foreach ($ligne_appros as $ligne_appro) {
-                $produit = Produit::find($ligne_appro->produit_id);
-                $produit->qte = $produit->qte + $ligne_appro->quantity_received;
-                $produit->save();
-            }
-        }
+        //     $ligne_appros = LigneApprovisionnement::where("approvisionnement_id",$appro->id)->get();
+        //     foreach ($ligne_appros as $ligne_appro) {
+        //         $produit = Produit::find($ligne_appro->produit_id);
+        //         $produit->qte = $produit->qte + $ligne_appro->quantity_received;
+        //         $produit->save();
+        //     }
+        // }
 
     }
 }
