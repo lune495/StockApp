@@ -49,7 +49,7 @@ class ProformaPaginatedQuery extends Query
         }
         if (isset($args['user_id']))
         {
-            $query = $query->where('user_id', $args['user_id']);
+            // $query = $query->where('user_id', $args['user_id']);
         }
         if (isset($args['numero']))
         {
