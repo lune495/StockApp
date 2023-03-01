@@ -41,7 +41,7 @@ class ApprovisionnementsQuery extends Query
         }
         if (isset($args['user_id']))
         {
-            $query->where('user_id', $args['user_id']);
+            // $query->where('user_id', $args['user_id']);
         }
         if (isset($args['produit_id']))
         {
