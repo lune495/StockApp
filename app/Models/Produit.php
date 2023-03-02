@@ -29,4 +29,8 @@ class Produit extends Model
     {
         return $this->hasMany(LigneApprovisionnement::class);
     }
+     public function ligne_inventaires()
+    {
+        return $this->hasMany(LigneInventaire::class);
+    }
 }
