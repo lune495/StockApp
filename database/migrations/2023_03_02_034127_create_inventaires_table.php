@@ -15,7 +15,7 @@ class CreateInventairesTable extends Migration
     {
         Schema::create('inventaires', function (Blueprint $table) {
             $table->id();
-            $table->string('numero');
+            $table->string('numero')->nullable();
             $table->integer('qte_total_inventaire')->default('0');
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');

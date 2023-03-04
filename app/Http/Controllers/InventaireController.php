@@ -32,7 +32,6 @@ class InventaireController extends Controller
                 $details = json_decode($str_json, true);
                 if (!isset($errors)) 
                 {
-
                     $item->save();
                     $itemId = $item->id; 
                     foreach ($details as $detail) 
@@ -64,7 +63,7 @@ class InventaireController extends Controller
                                 $qte_total_inventaire = $qte_total_inventaire + $itemDetail->quantite_reel;
                             }
                         }
-                    } 
+                    }
                     $item->numero = "Inv000{$item->id}";
                     $item->qte_total_inventaire = $qte_total_inventaire;
                     $item->save();

@@ -43,9 +43,9 @@ class ProformaController extends Controller
                         if (!isset($errors)) 
                         {
                             $item->save();
-                             $oldDetails = ProformaProduit::where('proforma_id',$item->id)->get();
+                            $oldDetails = ProformaProduit::where('proforma_id',$item->id)->get();
                             if($oldDetails){
-                            Outil::Checkdetail($oldDetails, $details, ProformaProduit::class, ['produit_id']);
+                               Outil::Checkdetail($oldDetails, $details, ProformaProduit::class, ['produit_id']);
                             }
                             foreach ($details as $detail) 
                             {

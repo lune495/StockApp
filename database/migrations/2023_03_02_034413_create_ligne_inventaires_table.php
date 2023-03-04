@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLigneIventairesTable extends Migration
+class CreateLigneInventairesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateLigneIventairesTable extends Migration
      */
     public function up()
     {
-        Schema::create('ligne_iventaires', function (Blueprint $table) {
+        Schema::create('ligne_inventaires', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('inventaire_id');
             $table->foreign('inventaire_id')->references('id')->on('inventaires')->onDelete('cascade');

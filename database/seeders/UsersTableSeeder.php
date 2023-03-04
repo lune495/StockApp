@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\{User,Approvisionnement,Produit,LigneApprovisionnement};
+use App\Models\{User,Approvisionnement,Produit,LigneApprovisionnement,Client,Outil};
 use Illuminate\Support\Facades\Hash;
 
 
@@ -57,6 +57,17 @@ class UsersTableSeeder extends Seeder
         //         $produit->save();
         //     }
         // }
+
+        $clients = Client::whereNotNull('telephone')->get();
+        foreach ($clients as $client) {
+            # code...
+            if($client->telephone){
+                $clt = Client::find($client->id);
+                $clt->telephone = Outil::enleveEspaces($client->telephone);
+                $clt->save();
+
+            }
+        }
 
     }
 }

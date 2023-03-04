@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Client;
+use App\Models\{Client,Outil};
 use Illuminate\Support\Facades\DB;
 
 class ClientController extends Controller
@@ -24,10 +24,11 @@ class ClientController extends Controller
             {
                 $errors = "Renseignez le nom du client";
             }
+            $telephone = Outil::enleveEspaces($request->telephone);
             $item->nom_complet = $request->nom_complet;
             $item->email = $request->email;
             $item->adresse = $request->adresse;
-            $item->telephone = $request->telephone;
+            $item->telephone = $telephone;
                 if (!isset($errors)) 
                 {
                     $item->save();

@@ -57,6 +57,10 @@ class VenteController extends Controller
                         if (!isset($errors)) 
                         {
                             $item->save();
+                            // $oldDetails = VenteProduit::where('vente_id',$item->id)->get();
+                            // if($oldDetails){
+                            // Outil::Checkdetail($oldDetails, $details, ProformaProduit::class, ['produit_id']);
+                            // }
                             foreach ($details as $detail) 
                             {
                                 $produit = Produit::find($detail['produit_id']);
