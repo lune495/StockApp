@@ -65,7 +65,7 @@ class VentePaginatedQuery extends Query
         }
         if(isset($args['produit_id']))
         {
-            $query->whereIn('id', VenteProduit::where('produit_id', $args['produit_id'])->get(['vente_id']))->get();
+            $query->whereIn('id', VenteProduit::where('produit_id', $args['produi,t_id'])->get(['vente_id']))->get();
         }
         if (isset($args['created_at_start']) && isset($args['created_at_end']))
         {
